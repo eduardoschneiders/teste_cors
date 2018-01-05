@@ -1,0 +1,19 @@
+<% content_for :page_title do %>
+  teste
+<% end %>
+
+<%= javascript_tag do %>
+  var url = 'http://localhost:5600/terra/activate?activation_token=9b95f54e2acfb256899899e9311312f7';
+
+  $.ajax({
+    type: "POST",
+    url: url,
+    success: function(data, status, xhr) {
+      console.log(data);
+    },
+    fail: function(data, status, xhr) {
+      console.log('fail');
+    }
+  });
+
+<% end %>
